@@ -9,6 +9,7 @@ app.Models = app.Models || {};
     app.Models.SectionModel = Backbone.Model.extend({
 
         defaults: {
+            id: '',
             title: '',
             completed: false
         }

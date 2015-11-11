@@ -16,19 +16,16 @@ app.Views = app.Views || {};
         events: {
         },
 
-        initialize: function () {      
-            this.render();            
-            this.initializeSections();
-        },
-        
-        initializeSections: function() {
-            this.collection.create(new app.Models.SectionModel({
-                title: 'Section One'
-            }));        
+        initialize: function () {   
+            this.render();  
         },
 
-        render: function () {
-            this.$el.html(this.template());
+        render: function () {        
+            
+            this.$el.html(this.template({
+                sections: this.collection.models
+            }));
+            
             return this;
         }
     });

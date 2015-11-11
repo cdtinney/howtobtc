@@ -11,6 +11,21 @@ app.Collections = app.Collections || {};
     
         initialize: function() {            
             this.model = app.Models.SectionModel;
+            this.populate();
+        },
+        
+        populate: function() {
+        
+            this.create(new app.Models.SectionModel({
+                id: 'section-one',
+                title: 'Introduction'
+            }));        
+        
+            this.create(new app.Models.SectionModel({
+                id: 'section-two',
+                title: 'Section Two'
+            }));       
+        
         }
 
     });
