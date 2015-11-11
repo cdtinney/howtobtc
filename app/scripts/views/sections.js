@@ -9,7 +9,7 @@ app.Views = app.Views || {};
 
         template: JST['app/scripts/templates/sections.ejs'],
 
-        tagName: '#test',
+        el: 'body',
 
         id: '',
 
@@ -22,8 +22,7 @@ app.Views = app.Views || {};
         },
 
         render: function () {
-            /* TODO - Should "return" this, but it causes errors */
-            this.$el.html(this.template(this.collection.toJSON()));
+            return this.$el.html(this.template());
         }
 
     });
