@@ -1,4 +1,4 @@
-/*global HowToBTC, Backbone, JST*/
+/*global app, Backbone, JST*/
 
 app.Views = app.Views || {};
 
@@ -8,8 +8,11 @@ app.Views = app.Views || {};
     app.Views.Sections = Backbone.View.extend({
 
         template: JST['app/scripts/templates/sections.ejs'],
-        el: 'section',
-        id: 'test',
+        
+        el: 'div',
+        className: 'container',
+        id: 'sections',
+        
         events: {},
 
         initialize: function () {      

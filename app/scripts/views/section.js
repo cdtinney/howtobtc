@@ -9,20 +9,18 @@ app.Views = app.Views || {};
 
         template: JST['app/scripts/templates/section.ejs'],
 
-        tagName: 'div',
-
-        id: '',
-
-        className: '',
+        el: 'div',
+        className: 'section',
 
         events: {},
 
         initialize: function () {
-            this.listenTo(this.model, 'change', this.render);
+            this.render();
         },
 
         render: function () {
-            this.$el.html(this.template(this.model.toJSON()));
+            this.$el.html(this.template());
+            return this;
         }
 
     });

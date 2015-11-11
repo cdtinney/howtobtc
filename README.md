@@ -1,6 +1,4 @@
 # howtobtc
-Course project for COMP4109
+Course project for COMP4109.
 
-uses:
-* backbone.js
-* nodejs
+Created using a [yeoman backbone.js generator](https://github.com/yeoman/generator-backbone).
