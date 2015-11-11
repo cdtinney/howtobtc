@@ -5,7 +5,7 @@ app.Views = app.Views || {};
 (function () {
     'use strict';
 
-    app.Views.Sections = Backbone.View.extend({
+    app.Views.SectionsView = Backbone.View.extend({
 
         template: JST['app/scripts/templates/sections.ejs'],
         
@@ -22,7 +22,7 @@ app.Views = app.Views || {};
         },
         
         initializeSections: function() {
-            this.collection.create(new app.Models.Section({
+            this.collection.create(new app.Models.SectionModel({
                 title: 'Section One'
             }));        
         },

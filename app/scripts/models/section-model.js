@@ -6,7 +6,7 @@ app.Models = app.Models || {};
 
     'use strict';
 
-    app.Models.Section = Backbone.Model.extend({
+    app.Models.SectionModel = Backbone.Model.extend({
 
         defaults: {
             title: '',

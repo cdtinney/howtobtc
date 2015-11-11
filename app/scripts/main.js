@@ -8,8 +8,8 @@
         Views: {},
         Routers: {},
         init: function () {            
-            new this.Views.Sections({
-                collection: new this.Collections.Sections()
+            new this.Views.SectionsView({
+                collection: new this.Collections.SectionCollection()
             });
         }
     };

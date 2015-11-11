@@ -5,7 +5,7 @@ app.Views = app.Views || {};
 (function () {
     'use strict';
 
-    app.Views.Section = Backbone.View.extend({
+    app.Views.SectionView = Backbone.View.extend({
 
         template: JST['app/scripts/templates/section.ejs'],
 
