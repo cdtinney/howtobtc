@@ -12,7 +12,8 @@ app.Views = app.Views || {};
         el: 'div',
         className: 'section',
 
-        events: {},
+        events: {
+        },
 
         initialize: function () {
             this.render();

@@ -13,17 +13,24 @@ app.Views = app.Views || {};
         className: 'container',
         id: 'sections',
         
-        events: {},
+        events: {
+        },
 
         initialize: function () {      
-            this.render();
+            this.render();            
+            this.initializeSections();
+        },
+        
+        initializeSections: function() {
+            this.collection.create(new app.Models.Section({
+                title: 'Section One'
+            }));        
         },
 
         render: function () {
             this.$el.html(this.template());
             return this;
         }
-
     });
 
 })();
