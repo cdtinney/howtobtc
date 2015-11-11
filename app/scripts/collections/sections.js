@@ -7,7 +7,7 @@ app.Collections = app.Collections || {};
 
     app.Collections.Sections = Backbone.Collection.extend({
     
-        initialize: function() {
+        initialize: function() {            
             this.model = app.Models.Sections;
         }
 

@@ -9,7 +9,7 @@ app.Views = app.Views || {};
 
         template: JST['app/scripts/templates/sections.ejs'],
 
-        tagName: 'div',
+        tagName: '#test',
 
         id: '',
 
@@ -17,12 +17,13 @@ app.Views = app.Views || {};
 
         events: {},
 
-        initialize: function () {
-            this.listenTo(this.collection, 'change', this.render);
+        initialize: function () {      
+            this.render();
         },
 
         render: function () {
-            this.$el.html(this.template(this.model.toJSON()));
+            /* TODO - Should "return" this, but it causes errors */
+            this.$el.html(this.template(this.collection.toJSON()));
         }
 
     });
