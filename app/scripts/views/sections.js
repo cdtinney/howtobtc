@@ -8,13 +8,8 @@ app.Views = app.Views || {};
     app.Views.Sections = Backbone.View.extend({
 
         template: JST['app/scripts/templates/sections.ejs'],
-
-        el: 'body',
-
-        id: '',
-
-        className: '',
-
+        el: 'section',
+        id: 'test',
         events: {},
 
         initialize: function () {      
@@ -22,7 +17,8 @@ app.Views = app.Views || {};
         },
 
         render: function () {
-            return this.$el.html(this.template());
+            this.$el.html(this.template());
+            return this;
         }
 
     });
