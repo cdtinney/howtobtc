@@ -1,13 +1,15 @@
-/*global Test, Backbone*/
+/*global app, Backbone*/
 
-Test.Collections = Test.Collections || {};
+app.Collections = app.Collections || {};
 
 (function () {
     'use strict';
 
-    Test.Collections.Sections = Backbone.Collection.extend({
-
-        model: Test.Models.Sections
+    app.Collections.Sections = Backbone.Collection.extend({
+    
+        initialize: function() {
+            this.model = app.Models.Sections;
+        }
 
     });
 

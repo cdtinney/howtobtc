@@ -1,11 +1,11 @@
-/*global HowToBTC, Backbone, JST*/
+/*global app, Backbone, JST*/
 
-HowToBTC.Views = HowToBTC.Views || {};
+app.Views = app.Views || {};
 
 (function () {
     'use strict';
 
-    HowToBTC.Views.Section = Backbone.View.extend({
+    app.Views.Section = Backbone.View.extend({
 
         template: JST['app/scripts/templates/section.ejs'],
 

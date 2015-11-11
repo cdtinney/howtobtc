@@ -1,11 +1,11 @@
 /*global HowToBTC, Backbone*/
 
-HowToBTC.Models = HowToBTC.Models || {};
+app.Models = app.Models || {};
 
 (function () {
     'use strict';
 
-    HowToBTC.Models.Section = Backbone.Model.extend({
+    app.Models.Section = Backbone.Model.extend({
 
         url: '',
 
