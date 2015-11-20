@@ -1,33 +1,27 @@
-/*global app, Backbone*/
+/* Collection - SectionModel */
 
-app.Collections = app.Collections || {};
+app.Collections.SectionCollection = Backbone.Collection.extend({
 
-(function () {
-    'use strict';
+    localStorage: new Backbone.LocalStorage('SectionCollection'),
 
-    app.Collections.SectionCollection = Backbone.Collection.extend({
+    initialize: function() {            
+        this.model = app.Models.SectionModel;
+        this.populate();
+    },
     
-        localStorage: new Backbone.LocalStorage('SectionCollection'),
+    populate: function() {
     
-        initialize: function() {            
-            this.model = app.Models.SectionModel;
-            this.populate();
-        },
+        this.create(new app.Models.SectionModel({
+            id: 'getting-started',
+            title: 'Getting Started'
+        }));        
+    
+        this.create(new app.Models.SectionModel({
+            id: 'wallet',
+            title: 'The Wallet'            
+        }));       
         
-        populate: function() {
-        
-            this.create(new app.Models.SectionModel({
-                id: 'section-one',
-                title: 'Introduction'
-            }));        
-        
-            this.create(new app.Models.SectionModel({
-                id: 'section-two',
-                title: 'Section Two'
-            }));       
-        
-        }
+    
+    }
 
-    });
-
-})();
+});

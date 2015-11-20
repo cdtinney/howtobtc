@@ -1,10 +1,10 @@
-/* View - SectionView */
+/* View - GettingStartedView */
 
-app.Views.SectionView = Backbone.View.extend({
+app.Views.Sections.GettingStartedView = Backbone.View.extend({
 
-    template: JST['app/scripts/templates/section.ejs'],
+    template: JST['app/scripts/templates/getting-started.ejs'],
     el: '#contentContainer',
-
+   
     events: {},
 
     initialize: function () {

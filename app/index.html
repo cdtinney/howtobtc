@@ -25,8 +25,13 @@
     
     <body>
     
-      <div id="sections" class="container">        
+      <!-- header -->
+      <div id="headerContainer" class="container">        
       </div>
+      
+      <!-- content -->
+      <div id="contentContainer" class="container">
+      </div>     
 
       <!-- build:js scripts/vendor.js -->
       <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -52,12 +57,18 @@
       <!-- endbuild -->
 
       <!-- build:js({.tmp,app}) scripts/main.js -->
+      
       <script src="scripts/main.js"></script>
+      <script src="scripts/routes/router.js"></script>
       <script src="scripts/templates.js"></script>
       <script src="scripts/collections/section-collection.js"></script>
       <script src="scripts/models/section-model.js"></script>
+      
+      <!-- views -->
+      <script src="scripts/views/sections/getting-started-view.js"></script>
       <script src="scripts/views/sections-view.js"></script>
       <script src="scripts/views/section-view.js"></script>
+      
       <!-- endbuild -->
       
   </body>

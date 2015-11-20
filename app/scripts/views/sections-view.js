@@ -1,33 +1,56 @@
-/*global app, Backbone, JST*/
+/* View - SectionsView */
 
-app.Views = app.Views || {};
+app.Views.SectionsView = Backbone.View.extend({
 
-(function () {
-    'use strict';
+    template: JST['app/scripts/templates/sections.ejs'],
+    title: 'HowToBTC',    
+    el: $("#headerContainer"),
+    
+    events: {},
 
-    app.Views.SectionsView = Backbone.View.extend({
+    initialize: function () {   
+        this.render();          
+    },
 
-        template: JST['app/scripts/templates/sections.ejs'],
+    render: function () {        
         
-        el: 'div',
-        className: 'container',
-        id: 'sections',
+        this.$el.html(this.template({
+            title: this.title,
+            sections: this.collection.models
+        }));
         
-        events: {
-        },
-
-        initialize: function () {   
-            this.render();  
-        },
-
-        render: function () {        
+        return this;
+    },
+    
+    renderSection: function (id) {
+    
+        // Render the selected section
+        var sections = this.collection.models;        
+        for (var i=0; i<sections.length; i++) {
             
-            this.$el.html(this.template({
-                sections: this.collection.models
-            }));
+            if (sections[i].id == id) {
             
-            return this;
+               new app.Views.SectionView({
+                    model: sections[i]
+               });
+           
+            }
+        
         }
-    });
-
-})();
+        
+        // Set the selected section to active in the header
+        this.selectSection(id);
+        
+    },
+    
+    selectSection: function(id) {
+        
+        $('nav li').removeClass('active');
+        if (id) {
+            $('nav li#' + id).addClass('active');
+           
+        }
+    
+    }
+    
+});

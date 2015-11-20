@@ -1,22 +1,21 @@
-/*global app, $*/
+/* App - global */
 
-(function(){
+window.app = {
 
-    window.app = {
-        Models: {},
-        Collections: {},
-        Views: {},
-        Routers: {},
-        init: function () {            
-            new this.Views.SectionsView({
-                collection: new this.Collections.SectionCollection()
-            });
-        }
-    };
+    Models: {},
+    Collections: {},
+    Views: { Sections: {} },
+    Router: null,
+    
+    init: function () {       
+        
+        // Initialize the router
+        new this.Router();
+        
+    }
+    
+};
 
-    $(document).ready(function () {
-        'use strict';
-        app.init();
-    });
-
-})();
+$(document).ready(function () {
+    app.init();
+});

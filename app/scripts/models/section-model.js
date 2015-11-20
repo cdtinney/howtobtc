@@ -1,19 +1,12 @@
-/*global HowToBTC, Backbone*/
+/* Model - SectionModel */
 
-app.Models = app.Models || {};
+app.Models.SectionModel = Backbone.Model.extend({
 
-(function () {
-
-    'use strict';
-
-    app.Models.SectionModel = Backbone.Model.extend({
-
-        defaults: {
-            id: '',
-            title: '',
-            completed: false
-        }
-        
-    });
-
-})();
+    defaults: {
+        id: '',
+        title: '',
+        view: null,
+        completed: false,
+    }
+    
+});
