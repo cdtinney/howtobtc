@@ -22,6 +22,15 @@ app.Views.SectionsView = Backbone.View.extend({
         return this;
     },
     
+    renderHome: function() {
+        
+        $("#contentContainer").empty();
+        var home = new app.Views.HomeView();
+        home.setInitialSectionId(this.collection.at(0).id);
+        home.render();
+        
+    },
+    
     renderSection: function (id) {
     
         // Search the collection for a model with a matching ID

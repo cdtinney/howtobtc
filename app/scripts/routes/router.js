@@ -18,18 +18,16 @@ app.Router = Backbone.Router.extend({
       
         routes: {
             '(/)' : 'home',
-            'section/:id': 'section'
+            'home' : 'home',
+            'section/:id': 'section'      
         },
         
-        home : function() {       
-            console.log('[router] home');            
-            this.view.render();            
+        home : function() {               
+            this.view.renderHome();      
         },
         
         section: function(id) {
-            console.log('[router] section id = ' + id);
             this.view.renderSection(id);
-            
         }
        
 });
