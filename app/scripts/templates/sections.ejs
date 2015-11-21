@@ -1,21 +1,31 @@
-<div class="masthead">
-  
-  <!-- navbar -->
+<div class="row">
+
   <nav class="navbar navbar-default navbar-static-top">
-   
-    <!-- list of sections -->
-    <ul class="nav nav-justified">      
-    
-      <!-- create a list item for each section -->
-      <% _.each(sections, function(section) { %>
-        <li id="<%= section.get('id') %>">
-          <a href="#section/<%= section.get('id') %>">
-            <%= section.get('title') %>
-          </a>
-        </li>
-      <% }); %>
+
+      <div class="col-md-6 col-md-offset-2 container-fluid">
       
-    </ul>
+        <!-- bitcoin logo -->
+        <div class="navbar-header">
+          <a class="navbar-brand"><img alt="" src="/images/bc_logo.png" style="width: 20px; height: 20px"></a>
+        </div>
+        
+        <!-- sections -->
+        <ul class="nav navbar-nav">
+            
+          <!-- create a list item for each section -->
+          <% _.each(sections, function(section) { %>
+            <li id="<%= section.get('id') %>">
+            
+              <a href="#section/<%= section.get('id') %>" class="nav-text">
+                <%= section.get('title') %>
+              </a>
+              
+            </li>
+          <% }); %>
+          
+        </ul>
+        
+    </div>
     
   </nav>
   
