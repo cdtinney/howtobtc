@@ -1,1 +1,87 @@
-<h4 class="text-muted"><%= title %></h4>
+<div id="1" class="animated fadeIn section-page">
+  <h3> Motivation</h3>
+  
+    <div class="bs-callout bs-callout-danger">
+      <h4> The problem </h4>
+      Some people dislike the current system of <b>centralized</b> banking, where transactions are handled by a <b>third-party</b> that you are forced to trust.
+    </div>
+    
+    <div class="bs-callout bs-callout-success">
+      <h4> The solution </h4>
+      Why not create a <b>decentralized</b> payment system where no single party must be trusted?
+    </div>
+    
+    <div class="row">
+      
+      <div class="col-md-1 col-md-offset-11">
+        <a class="btn-next btn btn-success btn-lg">
+          <span class="glyphicon glyphicon-chevron-right"></span> 
+        </a>
+      </div>
+      
+    </div>
+    
+</div>
+
+<div hidden id="2" class="animated fadeIn section-page">
+  <h3>Response</h3>
+    
+    <div class="bs-callout bs-callout-primary">
+      <h4>Bitcoin (BTC)</h4>
+        A decentralized form of digital <b>cryptocurrency</b>.
+    </div>
+    
+    <div class="bs-callout bs-callout-warning">
+      <h4>Peer-to-peer</h4>
+        Rather than rely on trusting a <b>central</b> party, Bitcoin uses the power of <b>cryptography</b> and a distributed network to accomplish security.
+    </div>
+    
+    <div class="col-md-1">
+    <a class="btn-prev btn btn-default btn-lg">
+      <span class="glyphicon glyphicon-chevron-left"></span> 
+    </a>
+    </div>
+      
+    <div class="col-md-1 col-md-offset-10">
+    <a class="btn-next btn btn-success btn-lg">
+      <span class="glyphicon glyphicon-chevron-right"></span> 
+    </a>
+    </div>
+    
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+    
+      $(".btn-next").click(event, function() {
+        
+        var pageId  = getParentPageId($(this));        
+        transition($("#" + pageId), $("#" + (pageId + 1)));
+        
+      });
+    
+      $(".btn-prev").click(event, function() {
+        
+        var pageId  = getParentPageId($(this));
+        transition($("#" + pageId), $("#" + (pageId -1)));
+        
+      });
+      
+    });
+    
+    function getParentPageId(buttonElement) {
+      return parseInt(buttonElement.closest('.section-page').attr('id'));
+    }
+    
+    function transition(fromPage, toPage) {
+    
+      // page does not exist
+      if (toPage.size() <= 0) return;
+      
+      fromPage.hide();
+      toPage.show();
+      
+    }
+    
+</script>

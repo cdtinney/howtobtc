@@ -7,7 +7,7 @@ app.Views.SectionsView = Backbone.View.extend({
     el: $("#headerContainer"),
     
     events: {},
-
+    
     initialize: function () {   
         this.render();          
     },
@@ -24,18 +24,19 @@ app.Views.SectionsView = Backbone.View.extend({
     
     renderSection: function (id) {
     
-        // Render the selected section
-        var sections = this.collection.models;        
-        for (var i=0; i<sections.length; i++) {
-            
-            if (sections[i].id == id) {
-            
-               new app.Views.SectionView({
-                    model: sections[i]
-               });
-           
-            }
-        
+        // Search the collection for a model with a matching ID
+        var section = this.collection.get(id);
+        if (section == undefined) {
+            return;
+        }
+               
+        // Clear the content of the previous section
+        $("#contentContainer").empty();
+    
+        // Add content of the new section
+        var view = section.attributes.view;                
+        if (view != null){                
+           new view( { model: section } );                
         }
         
         // Set the selected section to active in the header

@@ -13,15 +13,25 @@ app.Collections.SectionCollection = Backbone.Collection.extend({
     
         this.create(new app.Models.SectionModel({
             id: 'getting-started',
-            title: 'Getting Started'
+            title: 'Getting Started',
+            view: app.Views.Sections.GettingStartedView
         }));        
     
         this.create(new app.Models.SectionModel({
             id: 'wallet',
-            title: 'The Wallet'            
-        }));       
-        
+            title: 'The Wallet'         
+        }));    
     
+        this.create(new app.Models.SectionModel({
+            id: 'blockchain',
+            title: 'The Blockchain'         
+        }));       
+    
+        this.create(new app.Models.SectionModel({
+            id: 'mining',
+            title: 'Mining'         
+        }));            
+        
     }
 
 });

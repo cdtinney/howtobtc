@@ -5,7 +5,7 @@ app.Models.SectionModel = Backbone.Model.extend({
     defaults: {
         id: '',
         title: '',
-        view: null,
+        child: null,
         completed: false,
     }
     
