@@ -6,9 +6,10 @@ app.Router = Backbone.Router.extend({
         
         initialize: function() {
             
-            // Initialize the SectionsView container
-            this.view = new app.Views.SectionsView({
+            // Initialize the HeaderView container
+            this.view = new app.Views.HeaderView({
                 collection: new app.Collections.SectionCollection()
+                
             });
         
             // Begin monitoring routes (note: this needs to be done AFTER initializing the container view)

@@ -1,7 +1,38 @@
 <div class="jumbotron animated zoomIn">
+
   <h1>Welcome to the greatest Bitcoin tutorial...</h1>
+  
   <p>
     ...in the world.
   </p>
-  <a class="btn btn-primary btn-lg" href="#section/<%= initialSectionId %>" role="button">Get started</a>
+  
+  <a id="get-started" class="btn btn-warning btn-lg" href="#section/<%= initialSectionId %>" role="button">
+    Get started now
+  </a>
+  
 </div>
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+  
+    animationHover('#get-started', 'pulse infinite');
+  
+  });
+
+  function animationHover(element, animation){
+  
+      element = $(element);
+      element.hover(
+          function() {
+              element.addClass('animated ' + animation);        
+              //wait for animation to finish before removing classes
+              window.setTimeout( function(){
+                  element.removeClass('animated ' + animation);
+              }, 2000);         
+    
+          });
+          
+  }
+
+</script>

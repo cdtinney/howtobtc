@@ -1,8 +1,8 @@
-/* View - SectionsView */
+/* View - HeaderView */
 
-app.Views.SectionsView = Backbone.View.extend({
+app.Views.HeaderView = Backbone.View.extend({
 
-    template: JST['app/scripts/templates/sections.ejs'],
+    template: JST['app/scripts/templates/header-template.ejs'],
     title: 'HowToBTC',    
     el: $("#headerContainer"),
     
@@ -29,6 +29,16 @@ app.Views.SectionsView = Backbone.View.extend({
         home.setInitialSectionId(this.collection.at(0).id);
         home.render();
         
+        // Clear active tab
+        this.selectSection();
+        
+        // Set home to active
+        this.selectHome();
+        
+    },
+    
+    selectHome: function() {
+        $('#home').addClass('active');
     },
     
     renderSection: function (id) {
@@ -55,10 +65,9 @@ app.Views.SectionsView = Backbone.View.extend({
     
     selectSection: function(id) {
         
-        $('nav li').removeClass('active');
+        $('nav li, #home').removeClass('active');        
         if (id) {
             $('nav li#' + id).addClass('active');
-           
         }
     
     }
