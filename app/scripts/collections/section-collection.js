@@ -12,14 +12,14 @@ app.Collections.SectionCollection = Backbone.Collection.extend({
     populate: function() {
     
         this.create(new app.Models.SectionModel({
-            id: 'getting-started',
-            title: 'Getting Started',
+            id: 'introduction',
+            title: 'Introduction',
             view: app.Views.Sections.GettingStartedView
         }));        
     
         this.create(new app.Models.SectionModel({
             id: 'wallet',
-            title: 'The Wallet'         
+            title: 'The wallet'
         }));    
     
         this.create(new app.Models.SectionModel({
