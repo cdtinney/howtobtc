@@ -1,8 +1,8 @@
-/* View - GettingStartedView */
+/* View - WalletView */
 
-app.Views.Sections.GettingStartedView = Backbone.View.extend({
+app.Views.Sections.WalletView = Backbone.View.extend({
 
-    template: JST['app/scripts/templates/getting-started.ejs'],
+    template: JST['app/scripts/templates/wallet.ejs'],
     el: '#contentContainer',
    
     events: {

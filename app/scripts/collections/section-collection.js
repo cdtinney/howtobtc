@@ -19,7 +19,8 @@ app.Collections.SectionCollection = Backbone.Collection.extend({
     
         this.create(new app.Models.SectionModel({
             id: 'wallet',
-            title: 'The wallet'
+            title: 'The wallet',
+            view: app.Views.Sections.WalletView
         }));    
     
         this.create(new app.Models.SectionModel({

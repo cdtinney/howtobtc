@@ -9,7 +9,10 @@ app.Views.HeaderView = Backbone.View.extend({
     events: {},
     
     initialize: function () {   
-        this.render();          
+    
+        this.listenTo(this.collection, 'change', this.changeSection);
+        this.render();   
+        
     },
 
     render: function () {        
@@ -20,6 +23,7 @@ app.Views.HeaderView = Backbone.View.extend({
         }));
         
         return this;
+        
     },
     
     renderHome: function() {
@@ -48,6 +52,9 @@ app.Views.HeaderView = Backbone.View.extend({
         if (section == undefined) {
             return;
         }
+        
+        // Set the completed attribute to false
+        section.set("completed", false);
                
         // Clear the content of the previous section
         $("#contentContainer").empty();
@@ -68,6 +75,22 @@ app.Views.HeaderView = Backbone.View.extend({
         $('nav li, #home').removeClass('active');        
         if (id) {
             $('nav li#' + id).addClass('active');
+        }
+    
+    },
+    
+    changeSection: function(section) {
+            
+        /* ignore the event */
+        if (section.get("completed") == false) {
+            return;
+        }
+        
+        /* move to the next section, if possible */
+        var index = this.collection.indexOf(section);
+        var next = this.collection.at(index + 1);
+        if (next != undefined) {
+            this.renderSection(next.id);
         }
     
     }
