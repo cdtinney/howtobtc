@@ -9,10 +9,6 @@ app.Views.Sections.BaseSectionView = Backbone.View.extend({
         "click .btn-next" : "nextPage"    
     },
 
-    initialize: function () {
-        this.render();   
-    },
-
     render: function () {
     
         this.$el.html(this.template({
@@ -22,6 +18,17 @@ app.Views.Sections.BaseSectionView = Backbone.View.extend({
         return this;
         
     },
+    
+    cleanup: function() {
+    
+        /* remove elements from the DOM */
+        $(this.el).empty();
+        
+        /* unbind and remove delegated events */
+        this.unbind();
+        this.undelegateEvents();
+    
+    },    
     
     previousPage: function(event) {
         this.switchPage($(event.target), -1);
@@ -39,9 +46,9 @@ app.Views.Sections.BaseSectionView = Backbone.View.extend({
         var currPage = $("#" + pageId);
         var nextPage = $("#" + (pageId + direction));
     
-        /* no more pages to display - trigger the completed event */
+        /* no more pages to display - trigger the nextSection event */
         if (nextPage.size() <= 0) {
-            this.model.set("completed", true);
+            this.model.trigger('nextSection', this.model);
             return;
         }
 

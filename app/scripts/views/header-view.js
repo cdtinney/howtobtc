@@ -8,9 +8,11 @@ app.Views.HeaderView = Backbone.View.extend({
     
     events: {},
     
+    currentView: null,
+    
     initialize: function () {   
     
-        this.listenTo(this.collection, 'change', this.changeSection);
+        this.listenTo(this.collection, 'nextSection', this.nextSection);
         this.render();   
         
     },
@@ -28,49 +30,46 @@ app.Views.HeaderView = Backbone.View.extend({
     
     renderHome: function() {
         
-        $("#contentContainer").empty();
+        /* cleanup current section view */
+        this.closeCurrentSection();
+        
+        /* create the home view */
         var home = new app.Views.HomeView();
         home.setInitialSectionId(this.collection.at(0).id);
         home.render();
         
-        // Clear active tab
-        this.selectSection();
+        /* clear active tab */
+        this.setActiveSection();
         
-        // Set home to active
-        this.selectHome();
-        
-    },
-    
-    selectHome: function() {
+        /* set home tab to active */
         $('#home').addClass('active');
+        
     },
     
     renderSection: function (id) {
     
-        // Search the collection for a model with a matching ID
+        /* cleanup current section view */
+        this.closeCurrentSection();
+    
+        /* search the collection for a model with a matching ID */
         var section = this.collection.get(id);
         if (section == undefined) {
             return;
         }
-        
-        // Set the completed attribute to false
-        section.set("completed", false);
-               
-        // Clear the content of the previous section
-        $("#contentContainer").empty();
     
-        // Add content of the new section
+        /* create and render the new view */
         var view = section.attributes.view;                
-        if (view != null){                
-           new view({ model: section });                
+        if (view != undefined){                
+            this.currentView = new view({ model: section });     
+            this.currentView.render(); 
         }
         
-        // Set the selected section to active in the header
-        this.selectSection(id);
+        /* set the selected section to active in the header */
+        this.setActiveSection(id);
         
     },
     
-    selectSection: function(id) {
+    setActiveSection: function(id) {
         
         $('nav li, #home').removeClass('active');        
         if (id) {
@@ -79,18 +78,26 @@ app.Views.HeaderView = Backbone.View.extend({
     
     },
     
-    changeSection: function(section) {
-            
-        /* ignore the event */
-        if (section.get("completed") == false) {
-            return;
-        }
+    nextSection: function(currentSection) {
         
         /* move to the next section, if possible */
-        var index = this.collection.indexOf(section);
+        var index = this.collection.indexOf(currentSection);
         var next = this.collection.at(index + 1);
-        if (next != undefined) {
-            this.renderSection(next.id);
+        if (next != undefined) {        
+        
+            /* update the URL - router will handle view change */
+            Backbone.history.navigate("#section/" + next.id, {trigger: true, replace: true});    
+            
+        }
+    
+    },
+    
+    closeCurrentSection: function() {
+        
+        /* clean up the current view */
+        if (this.currentView != undefined && this.currentView.cleanup) {
+            this.currentView.cleanup();
+            this.currentView = undefined;
         }
     
     }
