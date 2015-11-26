@@ -62,7 +62,7 @@ app.Views.HeaderView = Backbone.View.extend({
         // Add content of the new section
         var view = section.attributes.view;                
         if (view != null){                
-           new view( { model: section } );                
+           new view({ model: section });                
         }
         
         // Set the selected section to active in the header
