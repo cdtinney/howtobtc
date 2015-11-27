@@ -30,18 +30,21 @@
 <div hidden id="2" class="animated fadeIn section-page">
   
     <div class="bs-callout bs-callout-danger">
-      <h4>TODO</b>.</h4>
-      <p>TODO.</p>
+      <h4>Your Bitcoin wallet is kept safe by using a <b>private key</b>.</h4>
+      <p>Your private key is created using <b>Elliptic Curve Digital Signature Algorithm</b> (ECDSA), giving you 256-bits of randomness.</p>
+	  <p>Make sure to keep your private key hidden, if someone learns your private key they can use your wallet.</p>
     </div>
   
     <div class="bs-callout bs-callout-success">
-      <h4>TODO</b>.</h4>
-      <p>TODO.</p>
+      <h4>Your wallet's <b>public address</b> is created using your private key.</h4>
+      <p>To keep your private key safe, you create a <b>public key</b> from it by using <b>ECDSA</b> again.</p>
+	  <p>Your <b>public address</b> is then created by running your public key through a <b>hash function</b>.</p>
     </div>
   
     <div class="bs-callout bs-callout-warning">
-      <h4>TODO</b>.</h4>
-      <p>TODO.</p>
+      <h4>"But if they have my public address, won't they be able to get my private key?"</h4>
+      <p>No, that's the beauty of it.</p>
+	  <p><b>ECDSA</b> works such that only one private key could create your public key, but knowing your public key doesn't help someone get your private key.</p>
     </div>
     
     <div class="row">
