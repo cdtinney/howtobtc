@@ -6,6 +6,15 @@ body {
   background-color: #f5f5f5;
 }
 
+div.fluid-container {
+  width: 95%;
+}
+
+p.highlight {
+  margin-left: 4em !important;
+  font-style: italic;
+}
+
 #home.active {
   background-color: #90caf9;
 }
