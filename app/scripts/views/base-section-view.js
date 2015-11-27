@@ -3,6 +3,7 @@
 app.Views.Sections.BaseSectionView = Backbone.View.extend({
 
     el: '#contentContainer',
+    imageElement: '#imageContainer',
    
     events: {
         "click .btn-prev" : "previousPage",
@@ -15,6 +16,10 @@ app.Views.Sections.BaseSectionView = Backbone.View.extend({
             title: this.model.attributes.title
         }));
         
+        if (this.image) {
+            $(this.imageElement).append('<img src="' + this.image + '" class="animated flip"/>');
+        }
+        
         return this;
         
     },
@@ -23,6 +28,7 @@ app.Views.Sections.BaseSectionView = Backbone.View.extend({
     
         /* remove elements from the DOM */
         $(this.el).empty();
+        $(this.imageElement).empty();
         
         /* unbind and remove delegated events */
         this.unbind();
