@@ -30,21 +30,22 @@
 <div hidden id="2" class="animated fadeIn section-page">
   
     <div class="bs-callout bs-callout-danger">
-      <h4>Your Bitcoin wallet is kept safe by using a <b>private key</b>.</h4>
-      <p>Your private key is created using <b>Elliptic Curve Digital Signature Algorithm</b> (ECDSA), giving you 256-bits of randomness.</p>
-	  <p>Make sure to keep your private key hidden, if someone learns your private key they can use your wallet.</p>
+      <h4>Your wallet is made secure using a <b>private key</b>.</h4>
+        <p>Each private key is created using an <b>Elliptic Curve Digital Signature Algorithm</b> (ECDSA) which gives you a random number, between 0 and...</p>
+        <p class="highlight">115792089237316195423570985008687907853269984665640564039457584007913129639936</p>
+        <p>This number is <b>really, really</b> big, and hard to guess.</p>
     </div>
   
     <div class="bs-callout bs-callout-success">
-      <h4>Your wallet's <b>public address</b> is created using your private key.</h4>
-      <p>To keep your private key safe, you create a <b>public key</b> from it by using <b>ECDSA</b> again.</p>
-	  <p>Your <b>public address</b> is then created by running your public key through a <b>hash function</b>.</p>
+      <h4>Your public address is <b>generated</b> using your private key, in two steps.</h4>
+      <p>1. A <b>public key</b> is created by using ECDSA again with your private key as input.
+      <p>2. The public key is <b>mapped</b> to a  unique public address using a <b>hash function</b>.</p>
     </div>
   
     <div class="bs-callout bs-callout-warning">
-      <h4>"But if they have my public address, won't they be able to get my private key?"</h4>
-      <p>No, that's the beauty of it.</p>
-	  <p><b>ECDSA</b> works such that only one private key could create your public key, but knowing your public key doesn't help someone get your private key.</p>
+      <h4><b>How</b> is this secure?</h4>
+      <p>Your private key is what gives you <b>control</b> of your wallet (and your Bitcoins).</p>
+      <p>The math behind ECDSA ensures that <b>no one</b> can figure out your private key from your public address.</p>
     </div>
     
     <div class="row">
