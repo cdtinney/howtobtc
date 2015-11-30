@@ -24,6 +24,12 @@ app.Collections.SectionCollection = Backbone.Collection.extend({
         }));    
     
         this.create(new app.Models.SectionModel({
+            id: 'transactions',
+            title: 'Transactions',
+            view: app.Views.Sections.TransactionsView       
+        }));     
+    
+        this.create(new app.Models.SectionModel({
             id: 'blockchain',
             title: 'The Blockchain'         
         }));       
