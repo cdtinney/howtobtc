@@ -1,26 +1,26 @@
-div .next-button {
-  background-color: #428bca;
-}
-
+/* body */
 body {
   background-color: #f5f5f5;
 }
 
-div.fluid-container {
-  width: 95%;
+/* page - next button */
+div .next-button {
+  background-color: #428bca;
 }
 
+/* page - callout - highlighted text */
 p.highlight {
   margin-left: 4em !important;
   font-style: italic;
 }
 
-#home.active {
-  background-color: #90caf9;
+/* page - callouts */
+.bs-callout {
+  font-size: 110%;
 }
 
-/* section image */
-#imageContainer img {
+/* section - left and right image */
+.imgContainer img {
   width: 128px;
   height: 128px;
   display: block;
@@ -29,9 +29,9 @@ p.highlight {
   margin-top: 60px;
 }
 
-/* Callouts */
-.bs-callout {
-  font-size: 110%;
+/* navbar - home tab */
+#home.active {
+  background-color: #90caf9;
 }
 
 .bs-callout-black > h4 {
@@ -43,12 +43,12 @@ p.highlight {
   margin-left: 2em;
 }
 
-/* Box shadows */
+/* box shadows */
 .box-shadow--2dp {
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12)
 }
 
-/* Navbar colors (generated) */
+/* navbar colors (generated) */
 .navbar-default {
   background-color: #2196f3;
   border-color: #90caf9;

@@ -3,7 +3,7 @@
 app.Views.Sections.BaseSectionView = Backbone.View.extend({
 
     el: '#contentContainer',
-    imageElement: '#imageContainer',
+    imageElement: '#leftImg',
    
     events: {
         "click .btn-prev" : "previousPage",
@@ -49,8 +49,8 @@ app.Views.Sections.BaseSectionView = Backbone.View.extend({
         var element = $(event.target);
         var pageId = this.getParentPageId(element);
         
-        var currPage = $("#" + pageId);
-        var nextPage = $("#" + (pageId + direction));
+        var currPage = $(".section-page#" + pageId);
+        var nextPage = $(".section-page#" + (pageId + direction));
     
         /* no more pages to display - trigger the nextSection event */
         if (nextPage.size() <= 0) {
