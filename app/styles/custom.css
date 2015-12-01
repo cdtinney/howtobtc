@@ -19,9 +19,13 @@ div .next-button {
 }
 
 /* page - callout - highlighted text */
-p.highlight {
+p.highlight, div.highlight {
   margin-left: 4em !important;
   font-style: italic;
+}
+
+div.highlight {
+  margin-top: 0.5em;
 }
 
 /* page - callouts */
