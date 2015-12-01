@@ -8,6 +8,16 @@ div .next-button {
   background-color: #428bca;
 }
 
+.bs-callout-black > h4 {
+  color: #333333;
+}
+
+.bs-callout > p {
+  margin-top: 0.5em;
+  margin-left: 2em;
+  margin-bottom: 0px !important;
+}
+
 /* page - callout - highlighted text */
 p.highlight {
   margin-left: 4em !important;
@@ -31,15 +41,6 @@ p.highlight {
 /* navbar - home tab */
 #home.active {
   background-color: #90caf9;
-}
-
-.bs-callout-black > h4 {
-  color: #333333;
-}
-
-.bs-callout > p {
-  margin-top: 1em;
-  margin-left: 2em;
 }
 
 /* box shadows */

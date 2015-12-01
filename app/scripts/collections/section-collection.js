@@ -19,7 +19,7 @@ app.Collections.SectionCollection = Backbone.Collection.extend({
     
         this.create(new app.Models.SectionModel({
             id: 'wallet',
-            title: 'The Wallet',
+            title: 'Wallet',
             view: app.Views.Sections.WalletView
         }));    
     
@@ -31,7 +31,8 @@ app.Collections.SectionCollection = Backbone.Collection.extend({
     
         this.create(new app.Models.SectionModel({
             id: 'blockchain',
-            title: 'The Blockchain'         
+            title: 'Blockchain',         
+            view: app.Views.Sections.BlockchainView      
         }));       
     
         this.create(new app.Models.SectionModel({
