@@ -61,14 +61,14 @@
     <div class="bs-callout bs-callout-danger">
       <h4>Your wallet is made secure using a <b>private key</b>.</h4>
         <p>Each private key is created using an <b>Elliptic Curve Digital Signature Algorithm</b> (ECDSA) which gives you a random number, between 1 and...</p>
-        <p class="highlight">115792089237316195423570985008687907853269984665640564039457584007913129639936</p>
+        <p class="highlight">115792089237316195423570985008687907853269984665640564039457584007913129639935</p>
         <p>This number is <b>really, really</b> big, and hard to guess.</p>
     </div>
   
     <div class="bs-callout bs-callout-success">
       <h4>Your public address is <b>generated</b> using your private key, in two steps.</h4>
       <p>1. A <b>public key</b> is created by using ECDSA again with your private key as input.
-      <p>2. The public key is <b>mapped</b> to a  unique public address using a <b>hash function</b>.</p>
+      <p>2. That public key is <b>mapped</b> to a unique public address using a <b>hash function</b>.</p>
       <div>
       
       <figure>
@@ -123,14 +123,29 @@
 
   <!-- section content -->
   <div class="col-md-8">
-    <div class="bs-callout bs-callout-primary">
-      <h4></h4>
-      <p>TODO</p>
+      <div class="bs-callout bs-callout-danger">
+      <h4>I wanted to keep the 3 box style</h4>
+        <p>I can't think of related content to fill this with - Cameron</p>
     </div>
   
     <div class="bs-callout bs-callout-success">
-     <h4>Quick Response(QR) Codes </h4>
-     <p>TODO</p>
+      <h4><b>QR Codes</b> can be used for a physical transfer of bitcoins.</h4>
+      <p>With some retailers accepting Bitcoin as payment, QR Codes are a tangible way to represent your wallet.</p>
+	  <p>Similar to a barcodes, QR Codes are scanned and relay your wallet address for use in transactions.</p>
+      <div>
+      
+      <figure>
+        <img src="/images/qr_code.png" style="display: block; width: 88px; margin: auto"/>
+        <figcaption style="text-align: center">Example of a QR Code</figcaption>
+      </figure>
+      
+      </div>
+    </div>
+  
+    <div class="bs-callout bs-callout-warning">
+      <h4>Your public address and private key are crucial for Bitcoin transactions</h4>
+      <p>Without them, people will not be able to transfer you bitcoins and you will not be able to claim your bitcoins</p>
+
     </div>
   
     <div class="row">
@@ -142,7 +157,7 @@
       </div>
       
       <div class="col-md-1 col-md-offset-10">
-        <a class="btn-next btn btn-warning btn-lg">
+        <a class="btn-next btn btn-primary btn-lg">
           <span class="glyphicon glyphicon-ok"></span> 
         </a>
       </div>
