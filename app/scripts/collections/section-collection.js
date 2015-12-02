@@ -45,7 +45,13 @@ app.Collections.SectionCollection = Backbone.Collection.extend({
             id: 'usage',
             title: 'Usage',
             view: app.Views.Sections.UsageView                 
-        }));           
+        })); 
+    
+        this.create(new app.Models.SectionModel({
+            id: 'conclusion',
+            title: 'Conclusion',
+            view: app.Views.Sections.ConclusionView       
+        }));             
         
     }
 
