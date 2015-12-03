@@ -3,6 +3,19 @@ body {
   background-color: #f5f5f5;
 }
 
+/* projector CSS - uncomment to test */
+
+/*
+body {
+  font-size: 200%;
+}
+
+h4 {
+  font-size: 200%;
+
+}
+*/
+
 /* page - next button */
 div .next-button {
   background-color: #428bca;
